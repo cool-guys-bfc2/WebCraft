@@ -242,6 +242,23 @@ BLOCK.SPONGE = {
 	fluid: false,
 	texture: function( world, lightmap, lit, x, y, z, dir ) { return [ 0/16, 3/16, 1/16, 4/16 ]; }
 };
+lastid=18
+const jsonString = '[
+]';
+
+try {
+  const javaScriptArray = JSON.parse(jsonString);
+
+  // You can now access the data as a normal JavaScript array of objects
+
+  // You can also iterate over the array using methods like forEach or map
+  javaScriptArray.forEach(user => {
+    BLOCK[user.name]=block;
+  });
+
+} catch (error) {
+  console.error("Error parsing JSON:", error); // Handles invalid JSON strings
+}
 
 // fromId( id )
 //
